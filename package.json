@@ -1,8 +1,20 @@
 {
 "name": "commonplace",
-"description": "cooperation layer",
+"description": "Common layer for real time communication",
 "version": "0.0.1",
+"author": "Phalanstere",
+"license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Phalanstere/commonplace/issues"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Phalanstere/commonplace.git"
+  },
+
+
 "devDependencies": {
-	"mocha": "*"
-	}
+"mocha": "*"
+}
 }
