@@ -5,13 +5,55 @@
 <link href="css/some-stylesheet.css" rel="stylesheet"/>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/commonplace.css">
 <script src="lib/commonplace.js">
+
 
 
 </script>
 </head>
+
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+var c = new Commonplace.Layer("logo");
+
+$("#logo").click(function(){
+ 	alert("KLICK");
+	});
+
+
+
+
+
+$("#Button1").observe('click', function(){
+	alert("Observation");
+	});
+
+$(".button").click(function(){
+ 	alert("BUTTON");
+	});
+
+	
+});
+
+</script>
+
 <body>
-Hier kommt der Body 
+	<div id = "Button1" class = "button">1</div>
+	<div class = "button">2</div>
+	<div class = "button">3</div>
+
+<div id = "logo">
+	<div class = "button">A</div>
+	<div class = "button">B</div>
+	<div class = "button">C</div>	
+</div>
+
+ 
 </body>
 </html>
  
