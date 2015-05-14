@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<link href="css/some-stylesheet.css" rel="stylesheet"/>
 
 <script src="node_modules/jquery/dist/jquery.min.js"></script>
 
@@ -19,24 +18,23 @@
 
 $( document ).ready(function() {
 
-var c = new Commonplace.Layer("logo");
 
 $("#logo").click(function(){
  	alert("KLICK");
 	});
 
-
-
-
-
-$("#Button1").observe('click', function(){
-	alert("Observation");
+/*
+$("#logo").mouseover(function(){
+ 	alert("OVER");
 	});
+	
 
-$(".button").click(function(){
- 	alert("BUTTON");
-	});
+$("#logo").mouseout(function(){
+ 	alert("OUT");
+	});	
+*/
 
+var c = new Commonplace.Layer("logo");
 	
 });
 
@@ -48,10 +46,19 @@ $(".button").click(function(){
 	<div class = "button">3</div>
 
 <div id = "logo">
-	<div class = "button">A</div>
-	<div class = "button">B</div>
-	<div class = "button">C</div>	
+	<div id = "A" class = "button">A</div>
+	<div id = "B" class = "button">B</div>
+	<div id ="C" class = "element">C
+		<div id = "sub" class = "sub">
+			<div class = "sub2"></div>
+		</div>
+	</div>	
+	<div id = "MeToo" class = "button">D</div>
+	
+
 </div>
+
+<div id = "statusbar">STATUSBAR</div>
 
  
 </body>
