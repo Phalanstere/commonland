@@ -10,6 +10,24 @@ border:solid 3px black;
 z-index: 1000;
 }
 
+.exit
+{
+position: absolute;
+right: 1%;
+width: auto;
+height: 20px;
+font-size: 20px;
+opacity: 0.5;	
+z-index: 2;
+}
+
+.exit:hover
+{
+cursor: pointer;
+opacity: 1;	
+}
+
+
 
 .icon
 {
@@ -44,10 +62,23 @@ z-index: 1000;
 display: none;
 }
 
+
+#collaboration_panel input
+{
+margin-left: 2%;
+margin-top: 10px;
+width: 92%;	
+border:solid 2px darkgray;	
+color: rgb(0,80,200);
+padding: 4px;
+
+}
+
+
 .legend
 {
 margin-left: 10px;
 font-size: 12px;
-margin-top: 8px;
+margin-top: 20px;
 color: darkgray;	
 }
