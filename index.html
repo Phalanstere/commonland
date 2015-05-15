@@ -32,7 +32,11 @@ $("#logo").mouseout(function(){
 	});	
 */
 
-var c = new Commonplace.Layer("logo");
+var params = {};
+params.url 		= 'http://127.0.0.1:3333';
+params.room 	= "admin";
+
+var c = new Commonplace.Layer("logo", params);
 	
 });
 
