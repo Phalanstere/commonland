@@ -3,12 +3,56 @@
 position: absolute;
 left: 1%;
 top: 120px;
-width: 64px;
-height: 400px;
+width: 48px;
+height: 300px;
 background: white;
 border:solid 3px black;	
 z-index: 1000;
 }
+
+
+#toolbar #chatpanel
+{
+position: absolute;
+top: -3px;
+left: 51px;
+width: 400px;
+height: 300px;	
+border-top:solid 3px black;	
+border-bottom:solid 3px black;
+border-right:solid 3px black;	
+background: rgba(200, 230, 255, 0.62);
+display: none;
+}
+
+#toolbar #chatarea
+{
+position: absolute;
+top: 10px;
+left: 10px;
+width: 380px;
+height: 250px;	
+background: white;
+overflow-y: auto;
+}
+
+#toolbar #chatinput
+{
+position: absolute;
+top: 270px;
+left: 10px;
+width: 370px;
+height: 20px;	
+background: gainsboro;	
+}
+
+
+#toolbar #chatinput input
+{
+outline: none;	
+border:solid: 1px black;
+}
+
 
 .exit
 {
@@ -31,8 +75,8 @@ opacity: 1;
 
 .icon
 {
-width: 64px;
-height: 64px;
+width: 48px;
+height: 48px;
 opacity: 0.5;	
 background: white;
 }
