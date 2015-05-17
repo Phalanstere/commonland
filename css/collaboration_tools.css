@@ -10,6 +10,11 @@ border:solid 3px black;
 z-index: 1000;
 }
 
+#toolbar #chat
+{
+display: none;	
+}
+
 
 #toolbar #chatpanel
 {
