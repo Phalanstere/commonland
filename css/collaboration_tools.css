@@ -38,6 +38,7 @@ left: 10px;
 width: 380px;
 height: 250px;	
 background: white;
+border:solid 1px black;
 overflow-y: auto;
 }
 
@@ -56,6 +57,27 @@ background: gainsboro;
 {
 outline: none;	
 border:solid: 1px black;
+}
+
+#toolbar .chatmessage
+{
+margin-left: 6px;
+margin-bottom: 3px;	
+}
+
+
+#toolbar .chatcontributor
+{
+font-size: 14px;
+color: red;	
+}
+
+
+#toolbar .chatcontent
+{
+margin-left: 6px;
+font-size: 14px;
+color: rgb(64, 64, 64);	
 }
 
 
