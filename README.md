@@ -7,3 +7,4 @@ commonplace allows chat and group interaction on a given website.
 - Daouna Jong, collaboration
 - Stefano Vetere, chat
 - Hrag Chanchanian, exit
+- Rohit M. S., record
