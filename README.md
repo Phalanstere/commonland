@@ -1,6 +1,6 @@
 # commonplace
 
-commonplace allows chat and group interaction on a given website. 
+commonplace allows chat and group interaction on a given website (via socket.io)
 
 ### icons
 
