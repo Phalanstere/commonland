@@ -108,6 +108,10 @@ this.testfunction = function(params)
     
 self.init();    
     
-}
+};
+
+
+
+module.exports = exports = UserSocket;
 
 
