@@ -8,12 +8,6 @@ The idea of this package. To create a socket.io layer that allows synchronized g
 	npm install common-land
 ```
 
-To require the library, you write:
-
-```javascript
-	var common = require("common-land");
-```
-
 ## Server
 
 To require the library, you write:
