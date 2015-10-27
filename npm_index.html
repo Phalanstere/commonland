@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+
+<script src="node_modules/jquery/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" type="text/css" href="css/commonplace.css">
+<link rel="stylesheet" type="text/css" href="css/collaboration_tools.css">
+
+<script src="bundle.js">
+
+
+
+</script>
+</head>
+
+
+<script type="text/javascript">
+
+$( document ).ready(function() {
+
+
+$("#A").click(function(){
+ 	$(this).css("background", "purple");
+	});
+
+$("#B").click(function(){
+ 	$(this).css("background", "purple");
+	});
+
+$("#C").click(function(){
+ 	$(this).css("background", "purple");
+	});
+
+$("#sub").click(function(){
+ 	$(this).css("background", "darkblue");
+	});
+	
+$(".sub2").click(function(){
+ 	$(this).css("background", "white");
+	});	
+
+
+$("#MeToo").click(function(){
+ 	$(this).css("background", "purple");
+	});	
+
+
+/*
+$("#logo").mouseover(function(){
+ 	alert("OVER");
+	});
+	
+
+$("#logo").mouseout(function(){
+ 	alert("OUT");
+	});	
+*/
+
+
+	
+});
+
+</script>
+
+<body>
+	<div id = "Button1" class = "button">1</div>
+	<div class = "button">2</div>
+	<div class = "button">3</div>
+
+<div id = "logo">
+	<div id = "A" class = "button">A</div>
+	<div id = "B" class = "button">B</div>
+	<div id ="C" class = "element">C
+		<div id = "sub" class = "sub">
+			<div class = "sub2"></div>
+		</div>
+	</div>	
+	<div id = "MeToo" class = "button">D</div>
+	
+
+</div>
+
+<div id = "statusbar">STATUSBAR</div>
+
+ 
+</body>
+</html>
+ 

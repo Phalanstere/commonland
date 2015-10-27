@@ -1,4 +1,7 @@
 var UserSocket = {};
+var io         = require("socket.io-client");
+
+
 
 
 UserSocket.Client = function(params)
