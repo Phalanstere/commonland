@@ -1,11 +1,12 @@
 {
   "name": "common-land",
-  "version": "0.0.12",
+  "version": "0.0.17",
   "description": "\"A tool that allows socket.synchronized collaboration\"",
-  "main": "./npm_lib/index.js",
+  "main": "./npm_lib/commonplace.js",
   "dependencies": {
     "jquery": "^2.1.4",
-    "socket.io": "^1.3.5"
+    "socket.io": "^1.3.5",
+    "socket.io-client": "^1.3.5"
   },
   "devDependencies": {
     "mocha": "^2.2.4",
@@ -18,10 +19,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Phalanstere/commonplace.git"
+    "url": "git+https://github.com/Phalanstere/commonland.git"
   },
   "keywords": [
-    "commonplace",
+    "commonland",
     "socket.io"
   ],
   "author": "phalanstere <burckhardt@ludicmedia.de> (https://github.com/Phalanstere)",
