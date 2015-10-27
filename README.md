@@ -16,8 +16,6 @@ To require the library, you write:
 
 ## Server
 
-Setting up the socket.io server: 
-
 To require the library, you write:
 
 ```javascript
@@ -25,7 +23,7 @@ var common = require("node_modules/common-land/server/commonland_server.js");
 ```
 
 To start an instance, you may pass an http server as an argument or leave the parameter empty.
-The the socket.io Server will be started on port 3333
+Then the socket.io Server will be started on port 3333
 
 
 ```javascript
@@ -35,7 +33,7 @@ The the socket.io Server will be started on port 3333
 
 ## Client
 
-On the client, you create an index.js file that might look like this:
+Client side, you create an index.js file that might look like this:
 
 ```javascript
 var $           = require("jquery");
