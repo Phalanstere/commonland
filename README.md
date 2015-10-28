@@ -1,8 +1,31 @@
 # commonland
 
-The idea of this package. To create a socket.io layer that allows synchronized group interaction on a given website (events, but also a chat)
+The idea of this package: It provides a socket.io layer that allows synchronized group interaction on a given website (events, chat, but also text input)
+By this means one can think of collaborative writing / programming / website demonstrations.
 
-# installation via npm
+# Using it conventionally
+
+If you want to use it my embedding the files, you have to add the following files from the **lib** and **css** folder. You should alco incorporate the **img** folder.
+
+```html
+<link rel="stylesheet" type="text/css" href="css/commonplace.css">
+<script src="https://cdn.socket.io/socket.io-1.2.1.js"></script>
+
+<script src="lib/SocketClient.js"></script>
+<script src="lib/commonplace.js">
+```
+Creating an instance looks like this, explained below.
+
+```javascript
+    var params = {};
+    params.url      = 'http://127.0.0.1:3333';
+    params.room     = "admin";
+    var c = new common.Layer("logo", params);
+```
+To make us you have to start the socket.io server, that you find in the **sever** foilder (see below)
+
+
+# Installation via npm
 
 ```javascript
 	npm install common-land
