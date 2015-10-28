@@ -18,6 +18,7 @@ Commonplace.Player = function(data) {
 
 
 Commonplace.Recorder = function(div) {
+
   var self = this;
   this.events = [];
   
@@ -82,21 +83,23 @@ Commonplace.Layer = function(div, params) {
   
 
   this.click_event = function() {
-      if (self.actual_element) {
+	var d, data, o;	
+		
+    if (self.actual_element) {
 
         window.console.log(self.actual_element);
-        var o = { type: 'click', element: self.active };
+        o = { type: 'click', element: self.active };
 
         self.event = o;
         
         if (self.recorder) {
-         var d = { type: "click", element: self.active}; 
+         d = { type: "click", element: self.active}; 
          self.recorder.store_data(d);       
-        };
+        }
         
         // now the event get transmitted voa socket.io
         if (self.communication) {
-            var data        = {};
+            data        = {};
             data.event      = o;
             data.func       = "window.collaborator.interaction";
             self.communication.broadcast_data(data);
@@ -135,8 +138,36 @@ Commonplace.Layer = function(div, params) {
 
     };
 
+
+	this.check_textarea = function(id) {
+		var val, 
+			dom = document.getElementById(id);
+		
+		
+		if (dom.type === "textarea") {
+			$("#" + id).keyup(function() {
+			
+			// now the event get transmitted voa socket.io
+			if (self.communication) {
+				var data        = {};
+				
+				data.event = { type: 'change', element: self.active };
+				data.func       = "window.collaborator.text_interaction";
+				data.text       = $(this).val();
+				self.communication.broadcast_data(data);
+				}
+			
+			
+			});
+		}
+  };
+
+
   // mouseover and mouseout evevents
   this.bindRecursive = function(elem) {
+   var id = elem.attr("id");
+   if (id) self.check_textarea(id);
+
 
    elem.mouseover(function(event){
     event.stopPropagation();
@@ -147,6 +178,7 @@ Commonplace.Layer = function(div, params) {
     event.stopPropagation();
     self.release_identification(this);
     });
+
 
 
 
@@ -222,13 +254,13 @@ Commonplace.Layer = function(div, params) {
          else {
               self.recording = false;
               self.recorder.stop();
-            }; 
+            }
             
          });      
       
       $("#toolbar #play").click(function() {
            
-          if (self.recorder) self.player = new Commonplace.Player(self.recorder.events);
+          if (self.recorder) {self.player = new Commonplace.Player(self.recorder.events); }
           
           });      
 
@@ -236,13 +268,16 @@ Commonplace.Layer = function(div, params) {
       
       
       $("#chatinput").change(function() {
-         var data   = {};
-         var temp    =  $(this).val();
+        var temp,
+		s,
+		data   = {};
+         
+         temp    =  $(this).val();
          data.func  = "window.collaborator.msg";
           
          $(this).val(""); 
          
-         var s = '<div class = "chatmessage">';
+         s = '<div class = "chatmessage">';
             s += '<span class = "chatcontributor">' + params.user.alias + ':</span>';
             s += '<span class = "chatcontent">' + temp + '</span>';            
          s += '</div>';
@@ -282,24 +317,28 @@ Commonplace.Layer = function(div, params) {
       
   };  
 
- // socket.io generated chat message
- this.msg = function(data) {
-    $("#chatarea").prepend(data.msg);
- };
+	 // socket.io generated chat message
+	 this.msg = function(data) {
+	    $("#chatarea").prepend(data.msg);
+	 };
 
 
-// socket.io generated interaction
-this.interaction = function(data) {
-  window.console.log("eine Interaktion " + data.event.type + "auf dem Element " + data.event.element);  
-  
-  var s = '$("' + data.event.element + '").' + data.event.type + '()';
-  
-  // event.stopPropagation();
-  
-  eval(s);
-};
+	// socket.io generated interaction
+	this.interaction = function(data) {
+	  window.console.log("eine Interaktion " + data.event.type + "auf dem Element " + data.event.element);  
+	  
+	  var s = '$("' + data.event.element + '").' + data.event.type + '()';
+	  
+	  // event.stopPropagation();
+	  
+	  eval(s);
+	};
 
 
+	this.text_interaction = function(data) {
+		console.log("TEXT" + data.event.element);
+		$(data.event.element).val(data.text);
+	};
 
 
   this.connect = function() {
@@ -338,7 +377,7 @@ this.interaction = function(data) {
        
        
 
-        if (!self.area) throw ( 'This is not a valid id' );
+        if (!self.area) { throw ( 'This is not a valid id' ); }
         else
             {
             self.list = $(name).children();
@@ -356,6 +395,5 @@ this.interaction = function(data) {
   self.init();
 
 };
-
 
 module.exports = exports = Commonplace;
