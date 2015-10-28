@@ -5,7 +5,8 @@ By this means one can think of collaborative writing / programming / website dem
 
 # Using it conventionally
 
-If you want to use it my embedding the files, you have to add the following files from the **lib** and **css** folder. You should alco incorporate the **img** folder.
+If you want to use it by embedding the files, you have to add the following files from the **lib** and **css** folder. You should alco incorporate the **img** folder.
+
 
 ```html
 <link rel="stylesheet" type="text/css" href="css/commonplace.css">
