@@ -99,3 +99,14 @@ width: 30%;
 border:solid 4px black;	
 padding: 6px;
 }
+
+
+
+#Selection
+{
+position: absolute;
+left: 60%;
+bottom: 2%;
+width: 200px;
+height: 24px;	
+}
